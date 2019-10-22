@@ -6,6 +6,7 @@
     "ts(8009)":0,
     "no-undef":0,
     "eqeqeq":0,
+    "no-eval":0,
 }
 
 }
