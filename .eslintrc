@@ -3,10 +3,9 @@
   "rules": {
     "no-use-before-define": 0,
     "no-plusplus": 0,
-    "ts(8009)":0,
-    "no-undef":0,
-    "eqeqeq":0,
-    "no-eval":0,
-}
-
+    "ts(8009)": 0,
+    "no-undef": 0,
+    "eqeqeq": 0,
+    "no-eval": 0
+  }
 }
