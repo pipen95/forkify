@@ -10,7 +10,7 @@ import { elements, renderLoader, clearLoader } from './views/base';
  */
 
 const state = {};
-console.log(state);
+// console.log(state);
 
 /**
  * SEARCH CONTROLLER
@@ -91,6 +91,4 @@ const controlRecipe = async () => {
 // window.addEventListener('load', controlRecipe);
 
 // Easy fix for above
-['hashchange', 'load'].forEach(event =>
-  window.addEventListener(event, controlRecipe)
-);
+['hashchange', 'load'].forEach(e => window.addEventListener(e, controlRecipe));
