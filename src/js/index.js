@@ -27,7 +27,7 @@ const controlSearch = async () => {
     // 3) Prepare UI for results
     searchView.clearInput();
     searchView.clearResults();
-    renderLoader(elements.searchResult);
+    renderLoader(elements.searchRes);
 
     try {
       // 4) Search for recipes
@@ -35,7 +35,7 @@ const controlSearch = async () => {
 
       // 5) render results on UI
       clearLoader();
-      searchView.renderResults(state.search);
+      searchView.renderResults(state.search.result);
     } catch (err) {
       alert('Something wrong with the search');
       clearLoader();
@@ -43,7 +43,7 @@ const controlSearch = async () => {
   }
 };
 
-elements.searchForm.addEventListener('click', e => {
+elements.searchForm.addEventListener('submit', e => {
   e.preventDefault();
   controlSearch();
 });
