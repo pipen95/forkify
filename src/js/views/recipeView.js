@@ -71,7 +71,9 @@ export const renderRecipe = recipe => {
             <div class="recipe__ingredients">
                 <ul class="recipe__ingredient-list">
                     
-                    ${recipe.ingredients.map(el => createIngredient).join('')}
+                    ${recipe.ingredients
+                      .map(el => createIngredient(el))
+                      .join('')}
                 </ul>
 
                 <button class="btn-small recipe__btn">
