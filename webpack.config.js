@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: ['babel-polyfill', './src/js/index.js'],
@@ -17,7 +18,14 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
-  devtool: 'source-map',
+
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        sourceMap: true,
+      }),
+    ],
+  },
   module: {
     rules: [
       {
@@ -29,4 +37,6 @@ module.exports = {
       },
     ],
   },
+  // FIXME: trouver une solution
+  devtool: 'source-map',
 };
