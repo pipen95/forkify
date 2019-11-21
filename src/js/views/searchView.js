@@ -7,9 +7,13 @@ export const clearInput = () => {
 };
 
 export const clearResults = () => {
-  // elements.searchResList.innerHTML = '';
+  elements.searchResList.innerHTML = '';
   elements.searchResPages.innerHTML = '';
 };
+
+// export const highlightSelected = id => {
+//   document.querySelector(`a[href=#${id}]`);
+// };
 
 export const highlightSelected = id => {
   const resultsArr = Array.from(document.querySelectorAll('.results__link'));
