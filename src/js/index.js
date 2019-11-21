@@ -8,7 +8,7 @@ import { elements, renderLoader, clearLoader } from './views/base';
 
 /**  Global state of the app
  * -Search object
- * -Current recipe object
+ * -Current recipe objec
  * -shopping list object
  */
 
