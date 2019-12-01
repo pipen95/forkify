@@ -3,22 +3,40 @@ export default class Likes {
     this.likes = [];
   }
 
-  addLike(id, title, author, ing) {
-    const likes = { id, title, author, ing };
+  addLike(id, title, author, img) {
+    const like = { id, title, author, img };
     this.likes.push(like);
+
+    // Persist data in localStorage
+    this.persistData();
+
     return like;
   }
 
   deleteLike(id) {
-    const index = this.likes.findex(el => el.id === id);
-    this.likes.spliice(index, 1);
+    const index = this.likes.findIndex(el => el.id === id);
+    this.likes.splice(index, 1);
+
+    // Persist data in localStorage
+    this.persistData();
   }
 
-  isLikes(id) {
+  isLiked(id) {
     return this.likes.findIndex(el => el.id === id) !== -1;
   }
 
   getNumLikes() {
     return this.likes.length;
+  }
+
+  persistData() {
+    localStorage.setItem('likes', JSON.stringify(this.likes));
+  }
+
+  readStorage() {
+    const storage = JSON.parse(localStorage.getItem('likes'));
+
+    // Restoring likes from the localStage
+    if (storage) this.likes = storage;
   }
 }
